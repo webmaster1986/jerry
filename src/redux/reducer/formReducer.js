@@ -18,7 +18,7 @@ const initialState = {
     monthlyHousingCost: '',
     count: 1,
     isBankConnected: false,
-    selectedPlan: 3,
+    selectedPlan: '',
     errors: {},
 }
 
