@@ -2822,6 +2822,17 @@ table {
     margin-top: 16px;
 }
 
+.error {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #F4505D;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
 @media (max-width: 992px) {
     .sub-title-content {
         margin-bottom: 0;

@@ -12,6 +12,34 @@ import {setFormValue} from "../../redux/action/formAction";
 
 class SignUp extends Component {
 
+    onSubmit = () => {
+        const fields = ['firstName', 'lastName', 'email', 'phone', 'street', 'apt', 'city', 'state', 'zipCode', 'month', 'day', 'year', 'last4SSN', 'annualIncome', 'monthlyHousingCost'];
+        const errors = {};
+        fields.forEach(x => {
+           if (!this.props.formValue[x]) {
+               errors[x] = true;
+           }
+        });
+        if (Object.keys(errors).length) {
+            this.props.setFormValue({errors});
+        } else {
+            const count = this.props.formValue.count + 1;
+            this.props.setFormValue({count, errors});
+        }
+    }
+
+    onBlur = (event) => {
+        if(event.target.value){
+            const { errors } =  this.props.formValue;
+            delete errors[event.target.name];
+            this.props.setFormValue({errors, [event.target.name]: event.target.value});
+        } else {
+            const errors =  this.props.formValue.errors;
+            errors[event.target.name] = true;
+            this.props.setFormValue({errors});
+        }
+    }
+
     onCount = () => {
         const count = this.props.formValue.count + 1;
         this.props.setFormValue({count})
@@ -46,7 +74,7 @@ class SignUp extends Component {
                     <Header count={count}/>
                     <div className="component-content">
                         <div className="container ">
-                        {count === 1 && <FirstStep onCount={this.onCount} onChangeText={this.onChangeText} formValue={this.props.formValue}/>}
+                        {count === 1 && <FirstStep onCount={this.onCount} onSubmit={this.onSubmit} onChangeText={this.onChangeText} onBlur={this.onBlur} formValue={this.props.formValue}/>}
                         {count === 2 && <SecondStep onCount={this.onCount} onBack={this.onBack} onBankConnected={this.onBankConnected} formValue={this.props.formValue}/>}
                         {count === 3 && <ThirdStep onCount={this.onCount} onBack={this.onBack} onSelectedPlan={this.onSelectedPlan} formValue={this.props.formValue}/>}
                         {count === 4 && <FourthStep onCount={this.onCount} onBack={this.onBack}/>}

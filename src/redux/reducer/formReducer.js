@@ -10,6 +10,7 @@ const initialState = {
     city: '',
     state: '',
     zipCode: '',
+    month: '',
     day: '',
     year: '',
     last4SSN: '',
@@ -17,7 +18,8 @@ const initialState = {
     monthlyHousingCost: '',
     count: 1,
     isBankConnected: false,
-    selectedPlan: 3
+    selectedPlan: 3,
+    errors: {},
 }
 
 export default function formReducer(state = initialState, action) {

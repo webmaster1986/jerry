@@ -4,8 +4,8 @@ import StepHeader from "./StepHeader";
 
 
 const FirstStep = props => {
-    const {onChangeText} = props;
-    const {firstName, lastName, email, phone, street, apt, city, state, zipCode, month, day, year, last4SSN, annualIncome, monthlyHousingCost} = props.formValue
+    const {onChangeText, onSubmit, onBlur} = props;
+    const {firstName, lastName, email, phone, street, apt, city, state, zipCode, month, day, year, last4SSN, annualIncome, monthlyHousingCost, errors} = props.formValue;
         return(
             <>
                 <StepHeader title={'Get Started with Square Installments'} discretion={'This information will verify your identity and eligibility, which does not affect your credit score. If we need more information that could affect your credit score, we will let you know.'}/>
@@ -22,7 +22,9 @@ const FirstStep = props => {
                                             className="text-box-content"
                                             onChange={onChangeText}
                                             value={firstName}
+                                            onBlur={onBlur}
                                         />
+                                        {errors.firstName ? <span className="error">First Name Required</span> : null }
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -33,8 +35,10 @@ const FirstStep = props => {
                                             placeholder="Last Name"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={lastName}
                                         />
+                                        {errors.lastName ? <span className="error">Last Name Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -47,8 +51,10 @@ const FirstStep = props => {
                                             placeholder="Email"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={email}
                                         />
+                                        {errors.email ? <span className="error">Email Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -61,14 +67,16 @@ const FirstStep = props => {
                                             placeholder="Phone"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={phone}
                                         />
+                                        {errors.phone ? <span className="error">Phone Required</span> : null }
                                     </div>
                                 </div>
                             </div>
                             <div className="label">Address</div>
                             <div className="row">
-                                <div className="col-md-9 pr-5">
+                                <div className="col-md-8 pr-5">
                                     <div className="text-box">
                                         <input
                                             name="street"
@@ -76,11 +84,13 @@ const FirstStep = props => {
                                             placeholder="Street"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={street}
                                         />
+                                        {errors.street ? <span className="error">Street Required</span> : null }
                                     </div>
                                 </div>
-                                <div className="col-md-3 pl-5">
+                                <div className="col-md-4 pl-5">
                                     <div className="text-box">
                                         <input
                                             name="apt"
@@ -88,8 +98,10 @@ const FirstStep = props => {
                                             placeholder="Apt"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={apt}
                                         />
+                                        {errors.apt ? <span className="error">Apt Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -102,8 +114,10 @@ const FirstStep = props => {
                                             placeholder="City"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={city}
                                         />
+                                        {errors.city ? <span className="error">City Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +129,10 @@ const FirstStep = props => {
                                             placeholder="State"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={state}
                                         >
+                                            <option value='' >State</option>
                                             {
                                                 stateList.map((x, i)=> {
                                                     return(
@@ -125,6 +141,7 @@ const FirstStep = props => {
                                                 })
                                             }
                                         </select>
+                                        {errors.state ? <span className="error">State Required</span> : null }
                                     </div>
                                 </div>
                                 <div className="col-md-6 pl-5">
@@ -135,8 +152,10 @@ const FirstStep = props => {
                                             placeholder="Zip Code"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={zipCode}
                                         />
+                                        {errors.zipCode ? <span className="error">Zip Code Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +168,10 @@ const FirstStep = props => {
                                             placeholder="January"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={month}
                                         >
+                                            <option value='' >Month</option>
                                             {
                                                 monthList.map((x, i)=> {
                                                     return(
@@ -159,6 +180,7 @@ const FirstStep = props => {
                                                 })
                                             }
                                         </select>
+                                        {errors.month ? <span className="error">Month Required</span> : null }
                                     </div>
                                 </div>
                                 <div className="col-md-4 pr-5 pl-5">
@@ -169,9 +191,12 @@ const FirstStep = props => {
                                             placeholder="Day"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={day}
                                         />
+                                        {errors.month ? <span className="error">Day Required</span> : null }
                                     </div>
+
                                 </div>
                                 <div className="col-md-4 pl-5">
                                     <div className="text-box">
@@ -181,12 +206,14 @@ const FirstStep = props => {
                                             placeholder="Year"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={year}
                                         />
+                                        {errors.month ? <span className="error">Year Required</span> : null }
                                     </div>
                                 </div>
                             </div>
-                            <div className="label">  Last 4 SSN</div>
+                            <div className="label">Last 4 SSN</div>
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="text-box">
@@ -195,8 +222,10 @@ const FirstStep = props => {
                                             type="text"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={last4SSN}
                                         />
+                                        {errors.last4SSN ? <span className="error">Last 4 SSN Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -209,8 +238,10 @@ const FirstStep = props => {
                                             type="text"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={annualIncome}
                                         />
+                                        {errors.annualIncome ? <span className="error">Annual Income Required</span> : null }
                                     </div>
                                 </div>
                             </div>
@@ -223,12 +254,14 @@ const FirstStep = props => {
                                             type="text"
                                             className="text-box-content"
                                             onChange={onChangeText}
+                                            onBlur={onBlur}
                                             value={monthlyHousingCost}
                                         />
+                                        {errors.monthlyHousingCost ? <span className="error">Monthly Housing Cost Required</span> : null }
                                     </div>
                                 </div>
                             </div>
-                            <button onClick={props.onCount} className="btn">Continue
+                            <button onClick={props.onSubmit} className="btn">Continue
                             </button>
                         </div>
                     </div>
