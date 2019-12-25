@@ -31,8 +31,17 @@ class AddPaymentMethod extends Component{
             if (value.length > 19) {
                 return;
             }
-            if (value.length && value.length < 16 && value.replace(/ /g, '').length % 4 === 0) {
+            if (value.length && value.length < 16 && value.replace(/ /g, '').length % 4 === 0 && value.length > this.state.cardNumber.length) {
                 value = `${value} `;
+            }
+        }
+        if (name === "mmyy"){
+            if (value.length > 5) {
+                return;
+            }
+            value = value.replace(/ /g, '');
+            if (value.length === 2 && this.state.mmyy.length < 3) {
+                value = `${value}/`;
             }
         }
         this.setState({
@@ -219,6 +228,7 @@ class AddPaymentMethod extends Component{
                                                                             name="mmyy"
                                                                             type="text"
                                                                             placeholder="MM/YY"
+                                                                            maxlength={5}
                                                                             className="text-box-content"
                                                                             value={mmyy}
                                                                             onChange={this.onChange}
@@ -233,6 +243,7 @@ class AddPaymentMethod extends Component{
                                                                             name="cvc"
                                                                             type="text"
                                                                             placeholder="CVC"
+                                                                            maxlength={3}
                                                                             className="text-box-content"
                                                                             value={cvc}
                                                                             onChange={this.onChange}

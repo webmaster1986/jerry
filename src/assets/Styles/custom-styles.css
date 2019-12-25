@@ -2686,6 +2686,7 @@ table {
 
 .profile-bank-icon{
     width: 55px;
+    opacity: 0.2;
 }
 
 .card:hover {
@@ -3239,6 +3240,7 @@ table {
 .profile-wallet-icon {
     width: 58px;
     margin-bottom: 20px;
+    opacity: 0.2;
 }
 
 @media (max-width: 768px) {
