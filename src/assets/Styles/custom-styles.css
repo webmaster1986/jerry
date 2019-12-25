@@ -2455,6 +2455,15 @@ table {
     margin-bottom: 0;
 }
 
+.profile-name {
+    font-size: 30px;
+    line-height: 48px;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    color: #0D202F;
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .title-tag {
         font-size: 28px;
@@ -2476,6 +2485,13 @@ table {
     position: relative;
 }
 
+.profile-content {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
 .card-text-header {
     font-size: 16px;
     line-height: 20px;
@@ -2484,6 +2500,7 @@ table {
     font-weight: 500;
     margin-bottom: 0;
 }
+
 .card-text-header-1 {
     font-size: 16px;
     line-height: 20px;
@@ -2491,6 +2508,31 @@ table {
     font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
     margin-bottom: 0;
+}
+
+.profile-text {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.payment-method{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-method-text{
+    display: flex;
+    flex: 2;
+}
+
+.card-icon{
+    max-width: 23px;
+    flex: 1;
 }
 
 @media (max-width: 992px) {
@@ -2604,6 +2646,46 @@ table {
     border-color: rgba(13, 32, 47, 0.1);
     cursor: pointer;
     margin-bottom: 12px;
+}
+.card, .profile-review-card {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    border-radius: 0;
+    z-index: 500;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    padding: 16px;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: none;
+    border: 1px solid;
+    border-color: rgba(13, 32, 47, 0.1);
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.profile-user-icon{
+    width: 23px;
+}
+
+.profile-bank-icon{
+    width: 55px;
 }
 
 .card:hover {
@@ -3055,6 +3137,16 @@ table {
     color: #6B7A86;
 }
 
+.account-text {
+    margin-top: 15px;
+    font-size: 30px;
+    line-height: 20px;
+    color: #000000;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
 .label {
     font-size: 14px;
     line-height: 20px;
@@ -3144,6 +3236,11 @@ table {
     background-color: #6B7A86;
 }
 
+.profile-wallet-icon {
+    width: 58px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .header {
         display: none;
@@ -3194,7 +3291,18 @@ table {
 
 .pl-5 {
     padding-left: 5px;
+}
 
+.pl-21 {
+    padding-left: 21px;
+}
+
+.pl-100 {
+    padding-left: 100px;
+}
+
+.pl-40 {
+    padding-left: 40px;
 }
 
 .pr-5 {
@@ -3203,6 +3311,24 @@ table {
 
 .mb-20 {
     margin-bottom: 20px;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+.ml-20{
+    margin-left: 20px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-10 {
+    margin-top: 10px;
 }
 
 .mb-50 {
@@ -3220,6 +3346,60 @@ table {
     text-align: center;
 }
 
+.profile-initial{
+    width: 80px;
+    height: 80px;
+    background-color: #1d5fcc;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+.profile-btn {
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+    padding: 16px 32px;
+    min-width: 120px;
+    background-color: #3585f4;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.back-content-profile {
+    position: absolute;
+    left: 65px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.edit-text{
+    color: #1d5fcc;
+    font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.text-align{
+    text-align: -webkit-center
+}
 .right-text-lbl {
     padding-top: 24px;
     padding-left: 5px;
