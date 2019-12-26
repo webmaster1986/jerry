@@ -97,8 +97,8 @@ function Profile(props) {
 
                                                     <div className="profile-text payment-method mb-20">
                                                         <img src={imgCard} className="profile-user-icon card-icon"/>
-                                                        <div className="pl-21 payment-method-text">PAYMENT METHOD
-                                                            <img src={question} className="profile-user-icon ml-20"/>
+                                                        <div className="pl-21 payment-method-text">PAYMENT METHODS
+                                                            <img src={question} className="profile-info-icon ml-20"/>
                                                         </div>
                                                         <img src={imgPluse} className="profile-user-icon" onClick={onAddPaymentMethod}/>
                                                     </div>
